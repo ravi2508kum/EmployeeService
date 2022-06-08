@@ -1,0 +1,21 @@
+management:
+ endpoints:
+  web:
+   exposure:
+    include: "*"
+spring:
+  application:
+    name: employeeService
+server: 
+  port: 8080
+  
+camel:
+  component:
+    servlet:
+      mapping:
+        context-path: /*
+rest:
+ endpoint:
+  path: rest:get:employeeDetails/{id}
+  retrycount: 3
+  retrydelay: 60000
